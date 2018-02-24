@@ -1,0 +1,19 @@
+{
+  "name": "battlesnake-starter",
+  "version": "0.0.1",
+  "description": "A simple BattleSnake starter with minimal routes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JemBijoux/battlesnake-starter.git"
+  },
+  "author": "Jem Bezooyen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JemBijoux/battlesnake-starter/issues"
+  },
+  "homepage": "https://github.com/JemBijoux/battlesnake-starter#readme"
+}
