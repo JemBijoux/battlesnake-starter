@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JemBijoux/battlesnake-starter/issues"
   },
-  "homepage": "https://github.com/JemBijoux/battlesnake-starter#readme"
+  "homepage": "https://github.com/JemBijoux/battlesnake-starter#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
