@@ -29,4 +29,5 @@ app.post('/move', (req, res) => {
   res.json({ 'move': possibleMoves[Math.floor(Math.random() * 4)]})
 })
 
-app.listen(4000, () => console.log('Example app listening on port 4000!'))
+const PORT = process.env.PORT
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
