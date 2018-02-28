@@ -17,16 +17,34 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => res.json(snakeStats))
 
 app.post('/start', (req, res) => {
-  console.log(req.body)
   res.json(snakeStats)
 })
 
 app.post('/move', (req, res) => {
   const gameState = req.body
   const mySnake = gameState.you
-  console.log(mySnake)
-  const possibleMoves = ['up', 'down', 'left', 'right']
-  res.json({ 'move': possibleMoves[Math.floor(Math.random() * 4)]})
+
+  const snakeHead = mySnake.body.data[0]
+  const food = gameState.food.data[0]
+
+  if (snakeHead.x - food.x === 0) {
+    if (snakeHead.y - food.y > 0) {
+      move = "up"
+    } else {
+      move = "down"
+    }
+  } else {
+      if (snakeHead.x - food.x > 0) {
+      move = "left"
+    } else {
+      move = "right"
+    }
+  }
+
+  res.json({ 
+    'move': move,
+    "taunt": "Hi"
+  })
 })
 
 const PORT = process.env.PORT
