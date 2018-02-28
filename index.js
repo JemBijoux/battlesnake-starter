@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
 
 const snakeStats = {
@@ -11,15 +12,21 @@ const snakeStats = {
   secondary_color: '#badca7'
 }
 
+app.use(bodyParser.json())
+
 app.get('/', (req, res) => res.json(snakeStats))
 
 app.post('/start', (req, res) => {
-  console.log(req)
+  console.log(req.body)
   res.json(snakeStats)
 })
 
 app.post('/move', (req, res) => {
-  res.json({ 'move': 'up' })
+  const gameState = req.body
+  const mySnake = gameState.you
+  console.log(mySnake)
+  const possibleMoves = ['up', 'down', 'left', 'right']
+  res.json({ 'move': possibleMoves[Math.floor(Math.random() * 4)]})
 })
 
 app.listen(4000, () => console.log('Example app listening on port 4000!'))

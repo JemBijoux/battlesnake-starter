@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "8.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JemBijoux/battlesnake-starter.git"
@@ -17,6 +20,7 @@
   },
   "homepage": "https://github.com/JemBijoux/battlesnake-starter#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2"
   }
 }
